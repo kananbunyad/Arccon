@@ -1,0 +1,61 @@
+# Python genel
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ortam dosyaları
+.env
+*.env
+.venv/
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django ile ilgili
+*.sqlite3
+db.sqlite3
+*.log
+
+# IDE/editor dosyaları
+.vscode/
+.idea/
+*.swp
+*~
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Migrations (isteğe bağlı, bazı ekipler migration'ları commit eder)
+**/migrations/*.py
+**/migrations/*.pyc
+# Eğer ilk migration dosyasını tutmak istiyorsan şu satırı ekleme:
+# !**/migrations/__init__.py
+
+# Coverage ve test raporları
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+coverage.xml
+nosetests.xml
+test-results.xml
+
+# MyPy
+.mypy_cache/
+
+# Pyre
+.pyre/
+
+# Profiling
+.prof
+
+# VS Code ayarları
+*.code-workspace
