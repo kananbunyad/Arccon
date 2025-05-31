@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-kpns&b=(2$p#k6623=9*ncpvme6iy%)tvnu#kw@dvw2_be)*xe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['arccon.az']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
