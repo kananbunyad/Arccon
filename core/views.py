@@ -1,7 +1,9 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
-from core.models import AboutUs, Blog, CompanyStats, ContactUs, Projects, Services, TeamMember, Testimonial, WhyChooseUs
+from core.models import AboutUs, Blog, CompanyStats, ContactUs, ProjectCategory, Projects, Services, TeamMember, Testimonial, WhyChooseUs
 
 def index(request):
     about_us = AboutUs.objects.first()
@@ -47,18 +49,50 @@ def services(request):
     }
     return render(request, 'service.html', context)
 
+
 def contact(request):
     if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        project = request.POST.get('project')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        # Veritabanına kaydet
         ContactUs.objects.create(
-            name=request.POST.get('name'),
-            email=request.POST.get('email'),
-            phone=request.POST.get('phone'),
-            project=request.POST.get('project'),
-            subject=request.POST.get('subject'),
-            message=request.POST.get('message'),
+            name=name,
+            email=email,
+            phone=phone,
+            project=project,
+            subject=subject,
+            message=message,
         )
+        full_message = f"""
+Yeni bir kontakt formu mesajı alındı:
+
+Ad: {name}
+E-poçt: {email}
+Telefon: {phone}
+Layihə: {project}
+Mövzu: {subject}
+
+Mesaj:
+{message}
+        """
+
+        send_mail(
+            subject=f"Arccon kontakt formu - {subject}",
+            message=full_message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=['info@arccon.az'],
+            fail_silently=False,
+        )
+
+        messages.success(request, "Mesajınız uğurla göndərildi!")
         return redirect('contact')
     return render(request, 'contact.html')
+
 
 def blog(request):
     blogs = Blog.objects.all()
@@ -72,6 +106,16 @@ def projects(request):
     projects = Projects.objects.all()
 
     return render(request, 'project.html', context={'projects': projects})
+
+def projects_by_category(request, category_name):
+    category = get_object_or_404(ProjectCategory, name=category_name)
+    projects = Projects.objects.filter(category=category)
+    categories = ProjectCategory.objects.all()
+    return render(request, 'project.html', context={
+        'projects': projects,
+        'categories': categories,
+        'active_category': category
+    })
 
 def features(request):
     why_choose_us = WhyChooseUs.objects.all()

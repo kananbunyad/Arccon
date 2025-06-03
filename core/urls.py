@@ -11,4 +11,5 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('features/', views.features, name='features'),
     path('testimonials/', views.testimonials, name='testimonials'),
+    path('projects/category/<str:category_name>/', views.projects_by_category, name='projects_by_category'),
 ]

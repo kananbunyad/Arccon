@@ -428,6 +428,11 @@
     border-color: var(--bs-light) var(--bs-secondary) var(--bs-secondary) var(--bs-light); 
     z-index: 3;
 }
+.fixed-img {
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
 
 .about .about-item-image::before {
     width: 80%;
