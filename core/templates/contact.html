@@ -10,11 +10,11 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Bizimlə Əlaqə</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-secondary">Contact</li>
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Ana Səhifə</a></li>
+                    <li class="breadcrumb-item"><a href="#">Səhifələr</a></li>
+                    <li class="breadcrumb-item active text-secondary">Əlaqə</li>
                 </ol>    
             </div>
         </div>
@@ -35,50 +35,50 @@
                 <div class="row g-5 mb-5">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="text-center mx-auto pb-5" style="max-width: 800px;">
-                            <p class="text-uppercase text-secondary fs-5 mb-0">Let’s Connect</p>
-                            <h2 class="display-4 text-capitalize mb-3">Send Your Message</h2>
+                            <p class="text-uppercase text-secondary fs-5 mb-0">Əlaqə Saxlayaq</p>
+                            <h2 class="display-4 text-capitalize mb-3">Mesajınızı Göndərin</h2>
                         </div>
                        <form method="POST" action="{% url 'contact' %}">
     {% csrf_token %}
     <div class="row g-3">
         <div class="col-lg-12 col-xl-6">
             <div class="form-floating border border-secondary">
-                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                <label>Your Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Adınız" required>
+                <label>Adınız</label>
             </div>
         </div>
         <div class="col-lg-12 col-xl-6">
             <div class="form-floating border border-secondary">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                <label>Your Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Mail" required>
+                <label>Mail</label>
             </div>
         </div>
         <div class="col-lg-12 col-xl-6">
             <div class="form-floating border border-secondary">
-                <input type="text" class="form-control" name="phone" placeholder="Phone">
-                <label>Your Phone</label>
+                <input type="text" class="form-control" name="phone" placeholder="Nömrəniz" required>
+                <label>Nömrəniz</label>
             </div>
         </div>
         <div class="col-lg-12 col-xl-6">
             <div class="form-floating border border-secondary">
-                <input type="text" class="form-control" name="project" placeholder="Project">
-                <label>Your Project</label>
+                <input type="text" class="form-control" name="project" placeholder="Layihəniz">
+                <label>Layihəniz</label>
             </div>
         </div>
         <div class="col-12">
             <div class="form-floating border border-secondary">
-                <input type="text" class="form-control" name="subject" placeholder="Subject">
-                <label>Subject</label>
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                <label>Mövzu</label>
             </div>
         </div>
         <div class="col-12">
             <div class="form-floating border border-secondary">
-                <textarea class="form-control" name="message" placeholder="Leave a message here" style="height: 160px"></textarea>
-                <label>Message</label>
+                <textarea class="form-control" name="message" placeholder="Mesajınızı daxil edin" style="height: 160px"></textarea>
+                <label>Mesajınızı daxil edin</label>
             </div>
         </div>
         <div class="col-12">
-            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+            <button class="btn btn-primary w-100 py-3" type="submit">Göndər</button>
         </div>
     </div>
 </form>
@@ -97,7 +97,7 @@
                         <div class="d-inline-flex bg-white w-100 border border-secondary p-4">
                             <i class="fas fa-map-marker-alt fa-2x text-secondary me-4"></i>
                             <div>
-                                <h4>Address</h4>
+                                <h4>Ünvan</h4>
                                 <p class="mb-0">{{ company_info.location }}</p>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                         <div class="d-inline-flex bg-white w-100 border border-secondary p-4">
                             <i class="fas fa-envelope fa-2x text-secondary me-4"></i>
                             <div>
-                                <h4>Mail Us</h4>
+                                <h4>Bizə Yazın</h4>
                                 <p class="mb-0">{{ company_info.email }}</p>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                         <div class="d-inline-flex bg-white w-100 border border-secondary p-4">
                             <i class="fa fa-phone-alt fa-2x text-secondary me-4"></i>
                             <div>
-                                <h4>Telephone</h4>
+                                <h4>Telefon</h4>
                                 <p class="mb-0">{{ company_info.phone }}</p>
                             </div>
                         </div>

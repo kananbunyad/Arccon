@@ -10,10 +10,10 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Team</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Komandamız</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Ana Səhifə</a></li>
+                    <li class="breadcrumb-item"><a href="#">Səhifələr</a></li>
                     <li class="breadcrumb-item active text-secondary">Team</li>
                 </ol>    
             </div>
@@ -25,8 +25,8 @@
         <div class="container-fluid team pb-5">
             <div class="container pb-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <p class="text-uppercase text-secondary fs-5 mb-0">Our Team</p>
-                    <h2 class="display-4 text-capitalize mb-3">Expert team members.</h2>
+                    <p class="text-uppercase text-secondary fs-5 mb-0">Komandamız</p>
+                    <h2 class="display-4 text-capitalize mb-3">Peşəkar Komanda Üzvlərimiz.</h2>
                 </div>
                 <div class="row g-4">
                     {% for member in team_members %}

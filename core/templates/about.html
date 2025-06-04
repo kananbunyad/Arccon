@@ -27,8 +27,8 @@
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Ana Səhifə</a></li>
+                    <li class="breadcrumb-item"><a href="#">Səhifələr</a></li>
                     <li class="breadcrumb-item active text-secondary">About</li>
                 </ol>    
             </div>
@@ -156,7 +156,7 @@
                                 <div class="counter-item-style"></div>
                                 <div class="counter-item-inner p-5">
                                     <i class="fas fa-thumbs-up fa-4x text-secondary"></i>
-                                    <h4 class="text-dark my-4">Completed Projects</h4>
+                                    <h4 class="text-dark my-4">Tamamlanmış Layihələr</h4>
                                     <div class="counter-counting">
                                         <span class="text-secondary fs-2 fw-bold" data-toggle="counter-up">{{ company_stats.completed_projects }}</span>
                                         <span class="h1 fw-bold text-secondary">+</span>
@@ -172,7 +172,7 @@
                                 <div class="counter-item-style"></div>
                                 <div class="counter-item-inner p-5">
                                     <i class="fas fa-user fa-4x text-secondary"></i>
-                                    <h4 class="text-dark my-4">Qualified Engineers</h4>
+                                    <h4 class="text-dark my-4">İxtisaslı Mühəndislər</h4>
                                     <div class="counter-counting">
                                         <span class="text-secondary fs-2 fw-bold" data-toggle="counter-up">{{ company_stats.qualified_team }}</span>
                                         <span class="h1 fw-bold text-secondary">+</span>
@@ -187,7 +187,7 @@
                                 <div class="counter-item-style"></div>
                                 <div class="counter-item-inner p-5">
                                     <i class="fas fa-heart fa-4x text-secondary"></i>
-                                    <h4 class="text-dark my-4">Years Experiance</h4>
+                                    <h4 class="text-dark my-4">İllik Təcrübə</h4>
                                     <div class="counter-counting">
                                         <span class="text-secondary fs-2 fw-bold" data-toggle="counter-up">{{ company_stats.years_experience }}</span>
                                         <span class="h1 fw-bold text-secondary">+</span>
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-center pt-4 wow fadeInUp" data-wow-delay="0.9s">
-                        <a class="counter-btn btn btn-secondary py-3 px-5" href="#">Join With Us</a>
+                        <a class="counter-btn btn btn-secondary py-3 px-5" href="#">Bizə Qoşulun</a>
                     </div>
                 </div>
             </div>
@@ -211,8 +211,8 @@
         <div class="container-fluid team pb-5">
             <div class="container pb-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <p class="text-uppercase text-secondary fs-5 mb-0">Our Team</p>
-                    <h2 class="display-4 text-capitalize mb-3">Expert team members.</h2>
+                    <p class="text-uppercase text-secondary fs-5 mb-0">Komandamız</p>
+                    <h2 class="display-4 text-capitalize mb-3">Peşəkar Komanda Üzvlərimiz.</h2>
                 </div>
                 <div class="row g-4">
                     {% for member in team_members %}

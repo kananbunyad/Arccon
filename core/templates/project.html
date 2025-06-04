@@ -11,11 +11,11 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Projects</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Layihələrimiz</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-secondary">Project</li>
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Ana Səhifə</a></li>
+                    <li class="breadcrumb-item"><a href="#">Səhifələr</a></li>
+                    <li class="breadcrumb-item active text-secondary">Layihələr</li>
                 </ol>    
             </div>
         </div>
@@ -26,8 +26,8 @@
 <div class="container-fluid project py-5">
     <div class="container py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <p class="text-uppercase text-secondary fs-5 mb-0">Our Projects</p>
-            <h2 class="display-4 text-capitalize mb-3">Completed Projects</h2>
+            <p class="text-uppercase text-secondary fs-5 mb-0">Layihələrimiz</p>
+            <h2 class="display-4 text-capitalize mb-3">Tamamlanmış Layihələr</h2>
         </div>
         <div class="row g-5">
             {% for project in projects %}
@@ -44,13 +44,13 @@
                         <a href="#" class="h4">{{ project.title }}</a>
                         <p class="mb-0 mt-3">{{ project.description }}</p>
                     </div>
-                    <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
+                    <a class="btn btn-primary py-2 px-4" href="#">Daha Ətraflı</a>
                 </div>
             </div>
             {% endfor %}
 
             <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <a class="btn btn-secondary py-3 px-5" href="{% url 'projects' %}">More Projects</a>
+                <a class="btn btn-secondary py-3 px-5" href="{% url 'projects' %}">Daha Çox Layihə</a>
             </div>
         </div>
     </div>
