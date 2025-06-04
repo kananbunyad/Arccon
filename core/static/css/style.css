@@ -428,8 +428,9 @@
     border-color: var(--bs-light) var(--bs-secondary) var(--bs-secondary) var(--bs-light); 
     z-index: 3;
 }
+
 .fixed-img {
-  height: 250px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
 }
