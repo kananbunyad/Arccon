@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kpns&b=(2$p#k6623=9*ncpvme6iy%)tvnu#kw@dvw2_be)*xe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -140,3 +141,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'kenanbunyad@gmail.com'
 EMAIL_HOST_PASSWORD = 'szew maab hvbw qcef'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+import django_heroku
+django_heroku.settings(locals())
+
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)

@@ -1,0 +1,1 @@
+web: gunicorn arccon.wsgi:application --log-file -
