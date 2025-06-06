@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -145,5 +146,4 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 import django_heroku
 django_heroku.settings(locals())
 
-MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
