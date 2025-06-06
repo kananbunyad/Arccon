@@ -146,8 +146,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 import django_heroku
 django_heroku.settings(locals())
 
-DATABASES['default'] = dj_database_url.config(
-    default=f"sqlite:///{BASE_DIR}/db.sqlite3",  # SQLite varsayılan bağlantısı
-    conn_max_age=600,
-    ssl_require=True
-)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600
+    )
+}
