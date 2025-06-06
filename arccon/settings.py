@@ -143,6 +143,6 @@ EMAIL_HOST_USER = 'kenanbunyad@gmail.com'
 EMAIL_HOST_PASSWORD = 'szew maab hvbw qcef'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
 
